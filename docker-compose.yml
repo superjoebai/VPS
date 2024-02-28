@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    image: chenzhaoyu94/chatgpt-web # 总是使用 latest ,更新时重新 pull 该 tag 镜像即可
+    ports:
+      - 127.0.0.1:3002:3002
+    environment:
+      OPENAI_API_KEY: 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
+      OPENAI_API_MODEL: gpt-3.5-turbo
+      # 反向代理，可选
+	  API_REVERSE_PROXY=http://66.103.206.95:7890/chatgpt/backend-api/conversation
+      
+      # 每小时最大请求次数，可选，默认无限
+      MAX_REQUEST_PER_HOUR: 0
+      # 超时，单位毫秒，可选
+      TIMEOUT_MS: 60000
