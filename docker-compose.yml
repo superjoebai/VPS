@@ -6,7 +6,7 @@ services:
     ports:
       - 127.0.0.1:3002:3002
     environment:
-      OPENAI_API_KEY: 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
+      OPENAI_API_KEY: 
       OPENAI_API_MODEL: gpt-3.5-turbo
       # 反向代理，可选
 	  API_REVERSE_PROXY=http://66.103.206.95:7890/chatgpt/backend-api/conversation
